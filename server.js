@@ -16,6 +16,8 @@ app.get('/postdata.html', (req, res)=>{
     res.sendFile(__dirname + '/postdata.html');
 });
 
-app.post('/quotes', (res, req)=> {
-    console.log('I have got my first data.')
+app.post('/quotes', (req, res)=> {
+    console.log(req.body);
+    res.sendFile(__dirname + '/postdata.html');
+    res.end();
 });
