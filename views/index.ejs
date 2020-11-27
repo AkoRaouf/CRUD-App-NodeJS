@@ -1,0 +1,33 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Quote Expression</title>
+</head>
+
+<body>
+    <h1>Here you are, you can write your quote</h1>
+
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name" />
+        <input type="text" placeholder="quote" name="quote" />
+        <button type="submit">Submit</button>
+    </form>
+    <h2> All quotes </h2>
+    <ul class="qoutes">
+        <% for(var i = 0; i< quotes.length; i++) { %>
+            <li>
+                <span><%= quotes[i].name %></span>
+                <span><%= quotes[i].quote %></span>
+            </li>
+        <%} %>
+    </ul>
+    <div>
+        <h2>The update section</h2>
+        <P>It will replace the first quote</P>
+        <button id="update-button"> Replace The fist one </button>
+    </div>
+    <script src="/main.js"></script>
+</body>
+</html>
